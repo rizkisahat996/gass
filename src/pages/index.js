@@ -4,8 +4,8 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import Aos from "aos";
 import axios from "axios";
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export async function getServerSideProps() {
   try {
@@ -57,7 +57,7 @@ export default function Home(props) {
     try {
       const response = await axios.post('https://hukum.belajarduit.com/api/cases', formData);
   
-      // toast.success('Kasus telah di submit. Silahkan tunggu notifikasi di Whatsapp anda');
+      toast.success('Kasus telah di submit. Silahkan tunggu notifikasi di Whatsapp anda');
   
       // Reset the form or perform any other actions as needed
       event.target.reset();
@@ -70,7 +70,7 @@ export default function Home(props) {
       console.error('Error sending data:', error);
   
       // Show an error notification
-      // toast.error('Error sending data');
+      toast.error('Error sending data');
     }
   };
   
@@ -193,7 +193,7 @@ export default function Home(props) {
 
   return (
     <Layout>
-    {/* <ToastContainer /> */}
+    <ToastContainer />
       <div className="d-none d-lg-block">
         <Splide aria-label="My Favorite Images" options={{ heightRatio: 0.49 }}>
           {carouselImages.map((image, index) => (
