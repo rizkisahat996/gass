@@ -4,8 +4,8 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import Aos from "aos";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 export async function getServerSideProps() {
   try {
@@ -57,7 +57,7 @@ export default function Home(props) {
     try {
       const response = await axios.post('https://hukum.belajarduit.com/api/cases', formData);
   
-      toast.success('Kasus telah di submit. Silahkan tunggu notifikasi di Whatsapp anda');
+      // toast.success('Kasus telah di submit. Silahkan tunggu notifikasi di Whatsapp anda');
   
       // Reset the form or perform any other actions as needed
       event.target.reset();
@@ -70,7 +70,7 @@ export default function Home(props) {
       console.error('Error sending data:', error);
   
       // Show an error notification
-      toast.error('Error sending data');
+      // toast.error('Error sending data');
     }
   };
   
@@ -193,7 +193,7 @@ export default function Home(props) {
 
   return (
     <Layout>
-    <ToastContainer />
+    {/* <ToastContainer /> */}
       <div className="d-none d-lg-block">
         <Splide aria-label="My Favorite Images" options={{ heightRatio: 0.49 }}>
           {carouselImages.map((image, index) => (
@@ -570,7 +570,7 @@ export default function Home(props) {
           </Splide>
         </div>
       </section>
-      <section className="bg-light">
+      {/* <section className="bg-light">
         <div className="container py-3">
           <center>
             <h5 className="text-custom display-6 fw-bolder">Apa yang Orang Lain Katakan</h5>
@@ -613,8 +613,8 @@ export default function Home(props) {
             </div>
           </div>
         </div>
-      </section>
-      <section className="" style={{ backgroundImage: "url(/images/slide-background.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
+      </section> */}
+      {/* <section className="" style={{ backgroundImage: "url(/images/slide-background.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundAttachment: "fixed" }}>
         <div className="overlay-black">
           <div className="container py-5">
             <div className="row mt-lg-3">
@@ -678,8 +678,8 @@ export default function Home(props) {
             </div>
           </div>
         </div>
-      </section>
-      <section className="bg-body">
+      </section> */}
+      {/* <section className="bg-body">
         <div className="container py-3">
           <center className="mt-5">
             <h5 className="text-custom display-6 fw-bolder">Kunjugi Ekspertis Kami</h5>
@@ -727,7 +727,7 @@ export default function Home(props) {
             </Splide>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="bg-black">
         <div className="container pt-3">
           <div className="row">

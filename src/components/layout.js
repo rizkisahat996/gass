@@ -482,7 +482,7 @@ export default function Layout({ children }) {
                                     <img className="img-fluid mb-4 bg-body rounded-circle p-2" src="/images/LogoTimbangan.png" width={80} style={{ objectFit: "cover" }} />
                                 </center>
                                 <h5 className="fw-semibold mb-4">
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
+                                    {/* Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature */}
                                 </h5>
                             </div>
                         </div>
