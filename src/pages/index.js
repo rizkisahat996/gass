@@ -266,7 +266,7 @@ export default function Home(props) {
           ))}
         </Splide>
       </div>
-      <div className="d-lg-none">
+      <div className="d-lg-none mt-5">
         <Splide aria-label="My Favorite Images" options={{ heightRatio: 0.8 }}>
           {carouselImages.map((image, index) => (
             <SplideSlide key={index}>
@@ -284,7 +284,7 @@ export default function Home(props) {
                   </h6>
                 </div>
               </div>
-              <div className="col-lg-7 col-12">
+              <div className="col-lg-7 col-12 mt-5">
                 <form className="form splide-overlay-content" onSubmit={handleSubmit}>
                   <div className="form-body">
                     <div className="row">
