@@ -810,7 +810,7 @@ export default function Home(props) {
                         <div className="col-10">
                           <div className="px-2">
                             <h5 className="fw-bolder">{item.author.name}</h5>
-                            <h6 className="fw-semibold">{item.created_at}</h6>
+                            <h6 className="fw-semibold">{new Date(item.created_at).toLocaleDateString()} {item.category.name}</h6>
                           </div>
                         </div>
                       </div>
@@ -840,7 +840,7 @@ export default function Home(props) {
                         <div className="col-10">
                           <div className="px-2">
                             <h5 className="fw-bolder">{item.author.name}</h5>
-                            <h6 className="fw-semibold">{item.created_at}</h6>
+                            <h6 className="fw-semibold">{new Date(item.created_at).toLocaleDateString()}</h6>
                           </div>
                         </div>
                       </div>
