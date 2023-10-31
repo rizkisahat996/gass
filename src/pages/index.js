@@ -4,8 +4,8 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import Aos from "aos";
 import axios from "axios";
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export async function getServerSideProps() {
   try {
@@ -57,7 +57,7 @@ export default function Home(props) {
     try {
       const response = await axios.post('https://hukum.belajarduit.com/api/cases', formData);
   
-      // toast.success('Kasus telah di submit. Silahkan tunggu notifikasi di Whatsapp anda');
+      toast.success('Kasus telah di submit. Silahkan tunggu notifikasi di Whatsapp anda');
   
       // Reset the form or perform any other actions as needed
       event.target.reset();
@@ -70,7 +70,7 @@ export default function Home(props) {
       console.error('Error sending data:', error);
   
       // Show an error notification
-      // toast.error('Error sending data');
+      toast.error('Error sending data');
     }
   };
   
@@ -193,7 +193,7 @@ export default function Home(props) {
 
   return (
     <Layout>
-    {/* <ToastContainer /> */}
+    <ToastContainer />
       <div className="d-none d-lg-block mt-5">
         <Splide aria-label="My Favorite Images" options={{ heightRatio: 0.49 }}>
           {carouselImages.map((image, index) => (
@@ -202,7 +202,7 @@ export default function Home(props) {
             <div className="splide-overlay px-5 py-5 justify-content-center">
               <div className="container splide-overlay-content">
             <div className="row mt-lg-3">
-              <div className="col-lg-5 col-12">
+              <div className="col-lg-4 col-12">
                 <div className="py-2 splide-overlay-content">
                   <h5 className="text-custom fw-bolder">{image.caption_first}</h5>
                   <h1 className="fw-bold text-white">{image.caption_second}</h1>
@@ -212,7 +212,7 @@ export default function Home(props) {
                   </h6>
                 </div>
               </div>
-              <div className="col-lg-7 col-12 mt-5">
+              <div className="col-lg-8 col-12 mt-5">
                 <form className="form splide-overlay-content" onSubmit={handleSubmit}>
                   <div className="form-body">
                     <div className="row">
@@ -274,7 +274,7 @@ export default function Home(props) {
               <div className="splide-overlay">
               <div className="container pt-5">
             <div className="row mt-lg-3">
-              <div className="col-lg-5 col-12">
+              <div className="col-lg-4 col-12">
                 <div className="py-2 splide-overlay-content">
                   <h5 className="text-custom fw-bolder">Untuk Anda Klien Kami</h5>
                   <h1 className="fw-bold text-white">Layanan Konsultasi</h1>
@@ -282,9 +282,12 @@ export default function Home(props) {
                   <h6 className="fw-bolder text-white">
                     Kami akan menghubungi Anda secepatnya untuk membantu Anda menyelesaikan masalah Anda dengan cepat dan efisien. Kami siap membantu Anda. 
                   </h6>
+                  <button type="button" className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#formModal">
+                    Konsultasi Sekarang
+                  </button>
                 </div>
               </div>
-              <div className="col-lg-7 col-12 mt-5">
+              {/* <div className="col-lg-8 col-12 mt-5">
                 <form className="form splide-overlay-content" onSubmit={handleSubmit}>
                   <div className="form-body">
                     <div className="row">
@@ -329,8 +332,8 @@ export default function Home(props) {
                     <i className="fa fa-paper-plane"></i> Kirim
                   </button>
                   </div>
-                </form>
-              </div>
+                </form> */}
+              {/* </div> */}
             </div>
           </div>
           </div>
